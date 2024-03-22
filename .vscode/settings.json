@@ -1,0 +1,10 @@
+{
+    "Lua.workspace.library": [],
+    "Lua.runtime.version": "Lua 5.3",
+    "Lua.runtime.builtin": {
+        "bit": "disable",
+        "bit32": "enable",
+        "utf8": "enable"
+    },
+    "Lua.workspace.checkThirdParty": false
+}
