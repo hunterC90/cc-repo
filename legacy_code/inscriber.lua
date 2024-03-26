@@ -16,26 +16,29 @@ local outputChest = peripheral.wrap(outputSide)
 local inscriberSlots = {1, 3, 2}
 
 items = {
-    ["au"] = "minecraft:gold_ingot",
-    ["di"] = "minecraft:diamond",
-    ["si"] = "emendatusenigmatica:silicon_gem",
-    ["cp"] = "appliedenergistics2:calculation_processor_press",
-    ["ep"] = "appliedenergistics2:engineering_processor_press",
-    ["lp"] = "appliedenergistics2:logic_processor_press",
-    ["pq"] = "appliedenergistics2:purified_certus_quartz_crystal",
-    ["pc"] = "appliedenergistics2:printed_calculation_processor",
-    ["pe"] = "appliedenergistics2:printed_engineering_processor",
-    ["pl"] = "appliedenergistics2:printed_logic_processor",
-    ["rs"] = "extendedcrafting:redstone_component"
+    ["au"] = {"minecraft:gold_ingot", 0},
+    ["di"] = {"minecraft:diamond", 0},
+    ["rd"] = {"minecraft:redstone", 0},
+    ["si"] = {"appliedenergistics2:material", 5},
+    ["pq"] = {"appliedenergistics2:material", 10},
+    ["cp"] = {"appliedenergistics2:material", 13},
+    ["ep"] = {"appliedenergistics2:material", 14},
+    ["lp"] = {"appliedenergistics2:material", 15},
+    ["sp"] = {"appliedenergistics2:material", 19},
+    ["cc"] = {"appliedenergistics2:material", 16},
+    ["ec"] = {"appliedenergistics2:material", 17},
+    ["lc"] = {"appliedenergistics2:material", 18},
+    ["sc"] = {"appliedenergistics2:material", 20},
 }
 
 recipes = {
-    {"pe", "rs", "si"},
+    {"cp", "pq"},
     {"ep", "di"},
-    {"pl", "rs", "si"},
     {"lp", "au"},
-    {"pc", "rs", "si"},
-    {"cp", "pq"}
+    {"sp", "si"},
+    {"cc", "rd", "sc"},
+    {"lc", "rd", "sc"},
+    {"ec", "rd", "sc"}
 }
 
 
@@ -43,7 +46,7 @@ function craft(v)
     local slots = {}
     local num = #v
     for i = 1, num do
-        slots[i] = storage.searchInv(inputChest, items[v[i]])
+        slots[i] = storage.searchInv(inputChest, items[v[i]][1], items[v[i]][2])
         if slots[i] == nil then
             return false
         end
@@ -54,7 +57,7 @@ function craft(v)
         inputChest.pushItems(inscriberSide, slots[i][1], 1, inscriberSlots[i])
     end
 
-    while inscriber.getItemDetail(4) == nil do sleep(0) end
+    while inscriber.list[4] == nil do sleep(0) end
     if num == 2 then
         inputChest.pullItems(inscriberSide, inscriberSlots[1])
     end
