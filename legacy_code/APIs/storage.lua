@@ -2,7 +2,7 @@
 -- if the array of slots is not given then all slots are checked
 -- if name is not given then returns info on every item
 -- returns arrays of slots that the item is in and an array of how many
-function searchInv(inventory, name, slotsToSearch)
+function searchInv(inventory, name, dmg, slotsToSearch)
     local slotsContaining = {}
     local slotsFilled = 0
     local quatities = {} -- notice that this gives a value for each slot
@@ -16,7 +16,7 @@ function searchInv(inventory, name, slotsToSearch)
 
     local item = inventory.list()
     for i = 1, #slotsToSearch do        
-        if (item[i] ~= nil) and (name == nil or name == item[i].name) then
+        if (item[i] ~= nil) and (name == nil or name == item[i].name) and ((dmg == nil) or (item[i].damage == dmg)) then
             slotsFilled = slotsFilled + 1
             quatities[slotsFilled] = item[i].count
             slotsContaining[slotsFilled] = i
