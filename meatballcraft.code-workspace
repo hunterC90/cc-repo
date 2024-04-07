@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../Desktop/Meatballcraft Server/world/opencomputers/95dcd921-176e-4c4d-8faf-e700b7e61ee2/home",
+			"name": "AE2-comp-openos"
+		},
+		{
+			"path": "../../../Desktop/Meatballcraft Server/world/opencomputers/326c4023-1a65-46d6-9870-d023a64f68e3/Applications/auto-stocker.app"
+		},
+		{
+			"path": "../../../Desktop/Meatballcraft Server/world/opencomputers/326c4023-1a65-46d6-9870-d023a64f68e3/Users/Chase/Desktop"
+		}
+	],
+	"settings": {
+		"Lua.runtime.version": "Lua 5.3",
+		"editor.tabSize": 2,
+		"editor.tabCompletion": "off",
+		"editor.useTabStops": false
+	}
+}

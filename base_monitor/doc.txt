@@ -1,0 +1,21 @@
+Base monitor program
+
+Displays notifications for the base in a GUI and gives sound notifications
+Chat messages too (perhaps that will be the easier place to start)
+
+A large component of this will be how tapes are stored and updated
+
+Since these computers are going to be distributed across large areas, I will need to have some way of automatically updating them.
+
+Having a central computer that handles distribution and checking of the child computers from the computer room would be good.
+
+This computer could receive messages from various computers and send commands to the others saying what to do
+
+TAPES:
+
+Collection of tapes kept in a text document like:
+
+label duration url
+
+All sound files can be in their own repo (along with the .txt)
+

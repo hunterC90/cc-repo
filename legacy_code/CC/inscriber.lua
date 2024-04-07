@@ -59,7 +59,7 @@ function craft(v)
 
     while inscriber.list[4] == nil do sleep(0) end
     if num == 2 then
-        inputChest.pullItems(inscriberSide, inscriberSlots[1])
+        inscriber.pushItems(inputSide, inscriberSlots[1])
     end
     outputChest.pullItems(inscriberSide, 4)
     return true
@@ -70,9 +70,9 @@ end
 
 function cleanUp()
     inputChest.pullItems(inscriberSide, 4)
-    inputChest.pullItems(inscriberSide,1)
-    inputChest.pullItems(inscriberSide,2)
-    inputChest.pullItems(inscriberSide,3)
+    inscriber.pushItems(inputSide, inscriberSlots[1])
+    inputChest.pullItems(inscriberSide,inscriberSlots[2])
+    inputChest.pullItems(inscriberSide,inscriberSlots[3])
 end
 
 cleanUp()
